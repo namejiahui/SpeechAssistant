@@ -5,9 +5,19 @@
     "description": "Allows you to select text and have it read aloud using text-to-speech",
     "permissions": [
         "contextMenus",
-        "tts"
+        "activeTab"
     ],
     "background": {
         "service_worker": "background.js"
-    }
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ]
 }
